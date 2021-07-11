@@ -19,9 +19,6 @@ class NoteStore {
 
   noteCreate = async (newNote, notebook) => {
     try {
-      // const formData = new FormData();
-      //for (const key in newNote) formData.append(key, newNote[key]);
-
       const response = await axios.post(
         `http://localhost:8000/notebooks/${notebook.id}/notes`,
         newNote
@@ -34,6 +31,20 @@ class NoteStore {
   };
 
   getNoteById = (noteId) => this.notes.find((note) => note.id === noteId);
+
+  noteUpdate = async (updateNote) => {
+    try {
+      const respose = await axios.put(
+        `http://localhost:8000/notes/${updateNote.id}`,
+        updateNote
+      );
+
+      const note = this.notes.find((note) => note.id === respose.data.id);
+      for (const key in note) note[key] = respose.data[key];
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 const noteStore = new NoteStore();

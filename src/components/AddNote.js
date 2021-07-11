@@ -29,7 +29,7 @@ const AddNote = (props) => {
           <input
             type="text"
             class="form-control"
-            placeholder="Enter a note..."
+            placeholder="Enter note title..."
             onChange={handleChange}
             name="title"
             value={note.title}
@@ -39,7 +39,7 @@ const AddNote = (props) => {
           <textarea
             name="body"
             onChange={handleChange}
-            placeholder="Enter a description..."
+            placeholder="Write your note..."
           />
 
           <button

@@ -34,6 +34,7 @@ export const CreateButtonStyled = styled.button`
 
 export const UpdateButtonStyled = styled.p`
   color: ${(props) => props.theme.pink};
+  cursor: pointer;
 `;
 
 export const NavStyled = styled.nav`

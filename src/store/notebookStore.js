@@ -21,9 +21,6 @@ class NotebookStore {
 
   notebookCreate = async (newNotebook) => {
     try {
-      // const formData = new FormData();
-      // for (const key in newNotebook) formData.append(key, newNotebook[key]);
-
       const response = await axios.post(
         "http://localhost:8000/notebooks",
         newNotebook

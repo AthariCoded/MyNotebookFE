@@ -22,7 +22,7 @@ const NoteDetail = () => {
       <p>{note.body}</p>
 
       {/*<DeleteButton noteId={note.id} /> */}
-      <Link to="/notes">
+      <Link to="/notebooks/">
         <button>Back</button>
       </Link>
     </DetailWrapper>

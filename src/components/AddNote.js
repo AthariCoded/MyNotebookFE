@@ -43,6 +43,7 @@ const AddNote = (props) => {
           />
 
           <button
+            style={{ zIndex: -1 }}
             class="btn btn-outline-secondary"
             type="submit"
             id="button-addon2"

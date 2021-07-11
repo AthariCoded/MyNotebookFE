@@ -3,6 +3,7 @@ import axios from "axios";
 
 class NoteStore {
   notes = [];
+  loading = true;
 
   constructor() {
     makeAutoObservable(this);
@@ -12,6 +13,7 @@ class NoteStore {
     try {
       const response = await axios.get("http://localhost:8000/notes");
       this.notes = response.data;
+      this.loading = false;
     } catch (error) {
       console.error("fetchnotes: ", error);
     }

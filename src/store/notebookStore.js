@@ -3,7 +3,7 @@ import axios from "axios";
 
 class NotebookStore {
   notebooks = [];
-  //loading = true;
+  loading = true;
 
   constructor() {
     makeAutoObservable(this);
@@ -13,7 +13,7 @@ class NotebookStore {
     try {
       const response = await axios.get("http://localhost:8000/notebooks");
       this.notebooks = response.data;
-      // this.loading = false;
+      this.loading = false;
     } catch (error) {
       console.error("fetchNotebooks: ", error);
     }
